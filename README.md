@@ -80,6 +80,47 @@ This workflow is run on *pull requests* to the main branch. It builds your docum
 
 This workflow ensures that your package has not been broken by any unexpected changes to dependencies. You can configure it to run on a schedule.
 
+## Essential Git / GitHub tasks
+
+Some final chores that you'll need to do to get your package up and running. Some of these are things that you'll need to do online, even after creating this repo as described above. They can be a little tricky, but I'll describe them here as best I can!
+
+### Creating an "orphan" `gh-pages` branch
+
+The architechture described here allows GitHub to build your documentation and then deploy it to the `gh-pages` branch. For this to work, you want to make a branch for your repo called `gh-pages` which is an "orphan", e.g., it just lives in its own world and does not track changes with any other branches.
+
+The easiest way to do this is from the command line. Just be careful! Make sure that you have successfully switched to your `gh-pages` branch before you `git rm` everything.
+
+```bash
+# make the orphan branch
+git checkout --orphan gh-pages
+
+# preview files to be deleted
+git rm -rf --dry-run .
+# actually delete the files
+git rm -rf .
+
+# make an empty index.html
+touch index.html
+git add index.html
+git commit -m "initial commit to gh-pages branch"
+
+# push the gh-pages branch online
+git push origin gh-pages
+
+# get back to the main branch and never think about this again
+git checkout main
+```
+
+Finally, you can tell GitHub about this change. In settings, you want to choose "deploy from a branch" as your source, and deploy from gh-pages, root directory. It should look like this:
+
+![Screenshot of github settings](/docs/images/ghpages_settings.png)
+
+Hooray! Now GitHub will look at the `gh-pages` branch and send whatever is there to rs-station.github.io/{your-repo}
+
+### Tokens and secrets
+
+
+
 ## Tests
 
 Yeah, testing! 

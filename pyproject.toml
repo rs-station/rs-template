@@ -35,17 +35,7 @@ dependencies = [
 # https://peps.python.org/pep-0621/#dependencies-optional-dependencies
 [project.optional-dependencies]
 test = ["pytest>=6.0", "pytest-cov"]
-dev = [
-    "black",
-    "ipython",
-    "mypy",
-    "pdbpp",
-    "pre-commit",
-    "pytest-cov",
-    "pytest",
-    "rich",
-    "ruff",
-]
+
 docs = [
     "sphinx",
     "myst_parser",
@@ -59,7 +49,7 @@ repository = "https://github.com/rs-station/rs-template"
 
 # same as console_scripts entry point
 [project.scripts]
-"rs.template" = "matchmaps._command_line:main"
+"rs.template" = "rs_template._command_line:main"
 
 # https://hatch.pypa.io/latest/config/metadata/
 [tool.hatch.version]

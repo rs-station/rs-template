@@ -1,5 +1,8 @@
 # rs-template
-Template repo demonstrating best practices. Read through this file (and explore this repo) and make sure that your package includes all of the following. In some cases, you may opt for a reasonable alternative, but all of this core functionality should be present.
+
+This is a template repo demonstrating best practices. You can make your own repo from this template, which should save you a lot of work! Just be sure to find-and-replace for "rs-template", "rs_template", and "dennisbrookner" and update everything.
+
+This file is a guide to the core elements that your project should have. In some cases, you may opt for a reasonable alternative, but all of this core functionality should be present.
 
 ## General organization
 
@@ -107,15 +110,19 @@ git commit -m "initial commit to gh-pages branch"
 # push the gh-pages branch online
 git push origin gh-pages
 
-# get back to the main branch and never think about this again
+# get back to the main branch
 git checkout main
 ```
 
-Finally, you can tell GitHub about this change. In settings, you want to choose "deploy from a branch" as your source, and deploy from gh-pages, root directory. It should look like this:
+You then have to tell GitHub about this change. In settings, you want to choose "deploy from a branch" as your source, and deploy from gh-pages, root directory. It should look like this:
 
 ![Screenshot of github settings](/docs/images/ghpages_settings.png)
 
-Hooray! Now GitHub will look at the `gh-pages` branch and send whatever is there to rs-station.github.io/{your-repo}
+Now GitHub will look at the `gh-pages` branch and send whatever is there to rs-station.github.io/{your-repo}. You should be able to run your `build_docs` workflow, and your content will end up on the internet!
+
+#### Don't forget the `.nojekyll` file
+
+In a silly turn of events, all of the style information for the website lives in a folder with a leading underscore, and by default, GitHub *ignores* directories with leading underscores. You override this behavior by creating an empty file on the `gh-pages` branch called `.nojekyll`. (It's possible you could have done this above when you were creating things from the command-line, but I'm not sure.)
 
 ### Tokens and secrets
 

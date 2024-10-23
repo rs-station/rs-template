@@ -137,4 +137,17 @@ but your goal is probably to put your package on [PyPI](https://pypi.org/), such
 
 The process of sending a package to PyPI is described [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/). I recommend following this tutorial, including sending your package to TestPyPI as a test.
 
-Once you've sent 
+ > When you make an API key for PyPI, you'll need this key twice. First, you'll have to provide it in the command-line when you first upload your package. Then, you'll need to provide this key to GitHub:
+ ![Github token settings](/docs/images/github_pypi_secret.png)
+
+(Note that this key is different from your API key for TestPyPI)
+
+One issue you will run into is that PyPI does *not* support dynamic version names like `rs_template-0.1.dev9+g3ae71f2`. As a quick workaround, I recommend briefly switching to static versioning, e.g. by editing your `pyproject.toml` to look like:
+
+```toml
+# dynamic = ["version"]
+version='0.0.1'
+```
+
+With the version temporarily pinned to `0.0.1`, you should be able to run `twine upload` successfully. After this, you can switch back to dynamic versioning.
+

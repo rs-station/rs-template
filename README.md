@@ -3,7 +3,7 @@
 This is a template repo demonstrating best practices. You can make your own repo from this template, which should save you a lot of work! Just be sure to find-and-replace for "rs-template", "rs_template", and "dennisbrookner" and update everything.
 
 This file is a guide to the core elements that your project should have. In some cases, you may opt for a reasonable alternative, but all of this core functionality should be present.
-
+  
 ## General organization
 
 The following files in this repo should be adapated for your repo:
@@ -61,9 +61,12 @@ Building docs locally is easy!
     - Note that when repeatedly building documentation, you should call `make clean` each time, followed by `make html`.
  3. Open the file `/docs/_build/html/index.html` in your browser. This is your site! Links to other pages in the site should all work, so you can explore the documentation here.
 
+## Tests
+
+This template repo just has a placeholder test function. Check out [reciprocalspaceship](https://github.com/rs-station/reciprocalspaceship/tree/main/tests) for a good example of what more fleshed-out tests should look like.
+
 ## Workflows
 You package should contain (at least) these four workflows, which live in the [`.github/workflows`](/.github/workflows/) folder.
-
 
 ### [`ci.yml`](/.github/workflows/ci.yml)
 
@@ -124,10 +127,14 @@ Now GitHub will look at the `gh-pages` branch and send whatever is there to rs-s
 
 In a silly turn of events, all of the style information for the website lives in a folder with a leading underscore, and by default, GitHub *ignores* directories with leading underscores. You override this behavior by creating an empty file on the `gh-pages` branch called `.nojekyll`. (It's possible you could have done this above when you were creating things from the command-line, but I'm not sure.)
 
-### Tokens and secrets
+### PyPI
 
+At this point, your package should be `pip`-installable via the `git+` syntax, e.g.:
+```bash
+pip install git+https://github.com/rs-station/rs-template.git
+```
+but your goal is probably to put your package on [PyPI](https://pypi.org/), such that it can be `pip`-installed directly.
 
+The process of sending a package to PyPI is described [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/). I recommend following this tutorial, including sending your package to TestPyPI as a test.
 
-## Tests
-
-Yeah, testing! 
+Once you've sent 

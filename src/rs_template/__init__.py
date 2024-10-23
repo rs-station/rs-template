@@ -9,4 +9,4 @@ except PackageNotFoundError:
 __author__ = "Dennis Brookner"
 __email__ = "debrookner@gmail.com"
 
-from rs_template.python_library import fancy_read_mtz
+from rs_template.python_library import fancy_read_mtz, fancy_read_cif

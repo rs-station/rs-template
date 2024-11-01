@@ -69,7 +69,7 @@ Building docs right from your computer is easy!
 This template repo just has a placeholder test function. Check out [reciprocalspaceship](https://github.com/rs-station/reciprocalspaceship/tree/main/tests) for a good example of what more fleshed-out tests should look like.
 
 ## Workflows
-You package should contain (at least) these four workflows, which live in the [`.github/workflows`](/.github/workflows/) folder.
+You package should contain (at least) these workflows, which live either in the [`.github`](/.github) folder or in the [`.github/workflows`](/.github/workflows/) subfolder.
 
 ### [`ci.yml`](/.github/workflows/ci.yml)
 
@@ -88,6 +88,14 @@ This workflow is run on *pull requests* to the main branch. It builds your docum
 ### [`cron.yml`](/.github/workflows/cron.yml)
 
 This workflow ensures that your package has not been broken by any unexpected changes to dependencies. You can configure it to run on a schedule. The `tox.ini` file defines what is tested by this workflow.
+
+### [dependabot](/.github/dependabot.yml)
+
+[Dependabot](https://github.com/dependabot) is a GitHub tool to help make sure your GitHub workflows and actions and such are up-to-date. This file enables dependabot for the repository.
+
+### [Failure template](/.github/TEST_FAIL_TEMPLATE.md)
+
+This file is just a necessary complement to `tox.ini`, allowing GitHub to create an issue in the repository if tox fails. 
 
 ## Essential Git / GitHub tasks
 

@@ -3,7 +3,7 @@
 This is a template repo demonstrating best practices. You can make your own repo from this template, which should save you a lot of work! Just be sure to find-and-replace for "rs-template", "rs_template", and "dennisbrookner" and update everything.
 
 This file is a guide to the core elements that your project should have. In some cases, you may opt for a reasonable alternative, but all of this core functionality should be present.
-  
+
 ## General organization
 
 The following files in this repo should be adapated for your repo:
@@ -14,7 +14,7 @@ This is the configuration file for the package. The example in this repo is a go
  - There are three different types of dependencies in this file. First, the core `dependencies = ` in the `[project]` block are python packages which are required for your package to function. The `[project.optional-dependencies]` block adds two more types of dependencies:
      - `test`: Any packages necessary to run the test suite.
      - `docs`: Any packages necessary to build the package documentation. More on this below.
-  
+
 The contents of the `pyproject.toml` file are described in more detail [here](https://packaging.python.org/en/latest/flow/#the-configuration-file)
 
 ### [`setup.py`](/setup.py) legacy file
@@ -50,9 +50,9 @@ The `/docs` folder contains the necessary files to build package documentation. 
 
 ### `conf.py` configuration file for docs
 There are lots of fun options here, but I recommend the sensible defaults in the example file. For more information, check out the [sphinx documentation](https://www.sphinx-doc.org/en/master/).
-  
+
 Note that if your documentation is to include a python API reference, you must include `"sphinx.ext.autodoc"` in `extensions = `. If your documentation is to include a command-line API reference, you must include `"sphinxcontrib.autoprogram"`.
-  
+
 If you want your documentation to include rendered jupyter notebooks, you can find code for this in various commented-out options in this file.
 
 Note that the [`"myst_parser"`](https://myst-parser.readthedocs.io/en/latest/) extension allows pages to be written in a blend of markdown and reStructuredText. There are examples of this throughout the documentation.
@@ -103,7 +103,7 @@ This workflow ensures that your package has not been broken by any unexpected ch
 
 ### [Failure template](/.github/TEST_FAIL_TEMPLATE.md)
 
-This file is just a necessary complement to `tox.ini`, allowing GitHub to create an issue in the repository if tox fails. 
+This file is just a necessary complement to `tox.ini`, allowing GitHub to create an issue in the repository if tox fails.
 
 ## Essential Git / GitHub tasks
 
@@ -154,7 +154,7 @@ pip install git+https://github.com/rs-station/rs-template.git
 ```
 but your goal is probably to put your package on [PyPI](https://pypi.org/), such that it can be `pip`-installed directly.
 
-The process of sending a package to PyPI is described [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/). I recommend following this tutorial, including sending your package to TestPyPI as a test. If you're already up to this point, you might be able to skip down to ["Generating distrubution archives"](https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives) in the tutorial. 
+The process of sending a package to PyPI is described [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/). I recommend following this tutorial, including sending your package to TestPyPI as a test. If you're already up to this point, you might be able to skip down to ["Generating distrubution archives"](https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives) in the tutorial.
 
 #### Dynamic versioning workaround
 

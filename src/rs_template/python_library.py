@@ -1,4 +1,4 @@
-import reciprocalspaceship as rs 
+import reciprocalspaceship as rs
 
 
 def fancy_read_mtz(mtzfile):
@@ -15,11 +15,11 @@ def fancy_read_mtz(mtzfile):
     rs.DataSet
         Data set, including resolution
     """
-    
+
     mtz = rs.read_mtz(mtzfile)
-    
+
     mtz.compute_dHKL(inplace=True)
-    
+
     return mtz
 
 
@@ -37,9 +37,9 @@ def fancy_read_cif(ciffile):
     rs.DataSet
         Data set, including resolution
     """
-    
+
     cif = rs.read_cif(ciffile)
-    
+
     cif.compute_dHKL(inplace=True)
-    
+
     return cif

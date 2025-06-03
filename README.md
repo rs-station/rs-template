@@ -146,7 +146,7 @@ pip install git+https://github.com/rs-station/rs-template.git
 ```
 but your goal is probably to put your package on [PyPI](https://pypi.org/), such that it can be `pip`-installed directly.
 
-The process of sending a package to PyPI is described [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/). I recommend following this tutorial, including sending your package to TestPyPI as a test.
+The process of sending a package to PyPI is described [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/). I recommend following this tutorial, including sending your package to TestPyPI as a test. If you're already up to this point, you might be able to skip down to ["Generating distrubution archives"](https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives) in the tutorial. 
 
 #### Dynamic versioning workaround
 
